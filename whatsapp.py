@@ -7,8 +7,8 @@
 #
 #
 #import requests
-#TWILIO_SID = "ACacf25c7d4a3730e3e7392022aee5c345"
-#TWILIO_AUTHTOKEN = "874e1163afab8d6e3b36d1a01856e4f1"
+#TWILIO_SID = "#################################"
+#TWILIO_AUTHTOKEN = "#################################"
 #TWILIO_MESSAGE_ENDPOINT = "https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json".format(TWILIO_SID=TWILIO_SID)
 #TWILIO_NUMBER = "whatsapp:+14155238886"
 #def send_whatsapp_message(to, message):
@@ -36,8 +36,8 @@ from twilio.rest import Client
 
 
 # Your Account Sid and Auth Token from twilio.com/console
-account_sid = 'ACacf25c7d4a3730e3e7392022aee5c345'
-auth_token = '874e1163afab8d6e3b36d1a01856e4f1'
+account_sid = '#################################'
+auth_token = '#################################'
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
