@@ -2,7 +2,7 @@
 """
 Created on Fri Sep 28 10:34:45 2018
 
-@author: joao.galhianne
+@author: guilherme.gasque
 """
 
 
@@ -29,10 +29,8 @@ def copy():
 # =============================================================================
 #     carrega parametros
 # =============================================================================
-    #usuario = paramentrosJson["usuario_gympass"][parametroDeUsuario]["usuario"]
-    #senha = paramentrosJson["usuario_gympass"][parametroDeUsuario]["senha"]
-    usuario = " "" " + cpf + " "" "
-    senha = " "" " + senha + " "" "
+    usuario = paramentrosJson["usuario_gympass"][parametroDeUsuario]["usuario"]
+    senha = paramentrosJson["usuario_gympass"][parametroDeUsuario]["senha"]
     
 # =============================================================================
 
@@ -74,15 +72,15 @@ def copy():
     print(token)
     
 # =============================================================================
-#     account_sid = 'ACacf25c7d4a3730e3e7392022aee5c345'
-#     auth_token = '874e1163afab8d6e3b36d1a01856e4f1'
+#     account_sid = '#################################'
+#     auth_token = '#################################'
 #     client = Client(account_sid, auth_token)
 # 
 #     message = client.messages \
 #                 .create(
 #                      body="Para utilizar o gympass, mostre este número na recepção:" + token,
 #                      from_='+13143288890',
-#                      to='+55199982305051'
+#                      to='+55###########'
 #                  )
 # 
 #     print(message.sid)
@@ -90,8 +88,8 @@ def copy():
     
     
     import requests
-    TWILIO_SID = "ACacf25c7d4a3730e3e7392022aee5c345"
-    TWILIO_AUTHTOKEN = "874e1163afab8d6e3b36d1a01856e4f1"
+    TWILIO_SID = "#################################"
+    TWILIO_AUTHTOKEN = "#################################"
     TWILIO_MESSAGE_ENDPOINT = "https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Messages.json".format(TWILIO_SID=TWILIO_SID)
     TWILIO_NUMBER = "whatsapp:+14155238886"
     def send_whatsapp_message(to, message):
@@ -106,29 +104,15 @@ def copy():
         
         
         return response_json
-    to_number = "whatsapp:+5519982305051"
-    #to_number = "whatsapp:+5519993550113"
-    #to_number = "whatsapp:+5519981806636"
+    to_number = "whatsapp:+55###########"
+
     
     appointment_msg = "Para utilizar o gympass, mostre este número na recepção: " + token
     msg = send_whatsapp_message(to_number, appointment_msg)
     print(msg['sid']) # SM5xxxafa561e34b1e84c9d22351ae08a0
     print(msg['status']) # queued
     
-    
-#    from twilio.rest import Client 
-#     
-#    account_sid = 'ACacf25c7d4a3730e3e7392022aee5c345' 
-#    auth_token = '874e1163afab8d6e3b36d1a01856e4f1' 
-#    client = Client(account_sid, auth_token) 
-#     
-#    message = client.messages.create( 
-#                                  from_='whatsapp:+14155238886',  
-#                                  body='Your appointment is coming up on July 21 at 3PM' + token,      
-#                                  to='whatsapp:+5519981806636' 
-#                              ) 
-#     
-#    print(message.sid)
+   
     
     gc.collect()
     
