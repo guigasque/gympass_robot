@@ -23,9 +23,7 @@
 #    
 #    
 #    return response_json
-#to_number = "whatsapp:+5519982305051"
-##to_number = "whatsapp:+5519993550113"
-##to_number = "whatsapp:+5519981806636"
+
 #
 #appointment_msg = "Para utilizar o gympass, mostre este número na recepção: " #+ token
 #msg = send_whatsapp_message(to_number, appointment_msg)
@@ -45,7 +43,7 @@ client = Client(account_sid, auth_token)
 message = client.messages.create(
                               body='Hello there!',
                               from_='whatsapp:+14155238886',
-                              to='whatsapp:+5519982305051'
+                              to='whatsapp:+#############'
                           )
 
 print(message.sid)
